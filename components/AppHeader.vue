@@ -1,11 +1,39 @@
 <template>
-  <header class="header">
-    <h1 class="title">Kumpulan Jokes Garing</h1>
-    <ul>
-      <li><nuxt-link to="/">Home</nuxt-link></li>
-      <li><nuxt-link to="/jokes">Jokes</nuxt-link></li>
-      <li><nuxt-link to="/about">About</nuxt-link></li>
-    </ul>
+  <header class="py-3 mb-3 px-4 shadow-lg fixed-top">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start container"
+    >
+      <p
+        class="d-flex align-items-center mb-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      >
+        <span class="fs-4 fw-bold text-warning ms-2"
+          >Kumpulan Jokes Garing</span
+        >
+      </p>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <nuxt-link to="/" class="nav-link text-light fs-5 ms-3"
+            >Home</nuxt-link
+          >
+        </li>
+        <li class="nav-item">
+          <nuxt-link to="/jokes_indo" class="nav-link text-light fs-5 ms-3"
+            >Jokes Indonesia</nuxt-link
+          >
+        </li>
+        <li class="nav-item">
+          <nuxt-link to="/jokes_inggris" class="nav-link text-light fs-5 ms-3"
+            >Jokes Inggris</nuxt-link
+          >
+        </li>
+        <li class="nav-item">
+          <nuxt-link to="/about" class="nav-link text-light fs-5 ms-3"
+            >About</nuxt-link
+          >
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -16,26 +44,10 @@ export default {
 </script>
 
 <style>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dotted #ccc;
+header {
+  background-color: #767f8b;
 }
-.header .title {
-  font-size: 3rem;
-  color: #526488;
-}
-.header ul {
-  display: flex;
-}
-.header a {
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  padding: 0.3rem 1rem;
-  margin-right: 0.5rem;
+.nuxt-link-exact-active {
+  font-weight: bold;
 }
 </style>
