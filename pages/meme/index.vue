@@ -1,26 +1,29 @@
 <template>
   <div class="container" style="margin-top: 100px">
-    <div class="mb-3">
-      <nuxt-link to="/jokes_inggris">
-        <button class="btn btn-sm btn-danger">
-          <b>&#11164;</b> &nbsp; Kembali ke List Jokes
-        </button>
-      </nuxt-link>
-    </div>
+    <h1 class="mb-4 border-bottom">Kumpulan Meme</h1>
 
-    <h2>{{ jokeApi }}</h2>
-    <hr />
-    <small>Joke ID : {{ $route.params.id }}</small>
+    <div class="row">
+      <Meme
+        v-for="(meme, index) in memesApi"
+        :memeUrl="meme.url"
+        :key="index"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import Meme from "../../components/ListMeme";
 import axios from "axios";
 
 export default {
+  components: {
+    Meme,
+  },
+
   data() {
     return {
-      jokeApi: [],
+      memesApi: [],
     };
   },
 
@@ -33,11 +36,11 @@ export default {
 
     try {
       const res = await axios.get(
-        `https://icanhazdadjoke.com/j/${this.$route.params.id}`,
+        "https://candaan-api.vercel.app/api/image",
         config
       );
 
-      this.jokeApi = res.data.joke;
+      this.memesApi = res.data.data;
     } catch (error) {
       console.log(error);
     }

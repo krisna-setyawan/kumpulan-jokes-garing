@@ -43,7 +43,7 @@ export default {
 
   head() {
     return {
-      title: "Jokes Garing",
+      title: "Jokes Garing Indonesia",
       meta: [
         {
           hid: "deskripsi",
